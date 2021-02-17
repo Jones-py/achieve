@@ -3,6 +3,7 @@ lock '3.6.0'
 # Application name to deploy
 set :application, 'achieve'
 # git repository to clone
+
 # (Xxxxxxxx: user name, yyyyyyyy: application name)
 set :repo_url, 'https://github.com/Jones-py/achieve'
 # The branch to deploy. The default is not necessarily master.
@@ -12,11 +13,13 @@ set :deploy_to, '/var/www/achieve'
 # Folders/files with symbolic links
 set :linked_files, %w{.env config/secrets.yml}
 set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/uploads}
+
 # Number of versions to retain (*described later)
 set :keep_releases, 5
 # Ruby version
 set :rbenv_ruby, '2.6.5'
 set :rbenv_type, :system
+
 # The level of the log to output. Settings to: debug if you want to see the error log in detail.
 # For production environments,: info is normal。
 # However, if you want to check the behavior firmly, Settings it to: debug.
@@ -51,7 +54,7 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
     end
   end
-endor :scm is :git
+end
 # set :scm, :git
 
 # Default value for :format is :airbrussh.
