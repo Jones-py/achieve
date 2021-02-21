@@ -2,9 +2,9 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
-gem 'dotenv-rails' # Required to manipulate environment variables in the development environment
-gem 'unicorn' # Application server unicorn
-gem 'mini_racer', platforms: :ruby # Required at deployment
+  gem 'dotenv-rails' # Required to manipulate environment variables in the development environment
+  gem 'unicorn' # Application server unicorn
+  gem 'mini_racer', platforms: :ruby # Required at deployment
 group :development, :test do
   gem 'capistrano', '3.6.0' # set of tools for capistrano
   gem 'capistrano-bundler'
